@@ -1,0 +1,298 @@
+/**
+ * Widget styles
+ * Defines visual appearance and layout for the chat widget
+ */
+
+/* Root widget container - fixed position in bottom right */
+#valaha-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  font-family: Inter, Arial, sans-serif;
+  z-index: 999999;
+}
+
+/* Chat button - circular floating button */
+.vw-chat-btn {
+  width: 56px;
+  height: 56px;
+  background: #4f46e5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+}
+
+/* Chat box container */
+.vw-box {
+  width: 320px;
+  height: 500px;
+  max-height: 80vh;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  margin-bottom: 14px;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.vw-box[style*="flex"],
+.vw-box.show {
+  display: flex !important;
+}
+
+/* Chat box header with gradient background */
+.vw-header {
+  padding: 16px;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: #fff;
+}
+
+.vw-title {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.vw-subtitle {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* Chat box body content */
+.vw-body {
+  padding: 20px;
+  text-align: center;
+}
+
+.vw-welcome {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.vw-desc {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Start chat button */
+.vw-start-btn {
+  margin-top: 20px;
+  padding: 12px 18px;
+  width: 100%;
+  border: none;
+  background: #4f46e5;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.vw-start-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.vw-btn-loading {
+  display: inline-block;
+}
+
+/* Chat Interface */
+.vw-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.vw-status {
+  font-size: 11px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.vw-chat-screen {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.vw-messages {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 16px;
+  background: #f5f5f5;
+  min-height: 0;
+}
+
+/* Custom scrollbar styling */
+.vw-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.vw-messages::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.vw-messages::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+.vw-messages::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.vw-message {
+  margin-bottom: 16px;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vw-message-customer {
+  text-align: right;
+}
+
+.vw-message-agent {
+  text-align: left;
+}
+
+.vw-message-header {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+  font-size: 11px;
+  color: #666;
+}
+
+.vw-message-customer .vw-message-header {
+  justify-content: flex-end;
+}
+
+.vw-message-sender {
+  font-weight: 600;
+}
+
+.vw-message-time {
+  opacity: 0.7;
+}
+
+.vw-message-content {
+  display: inline-block;
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.vw-message-customer .vw-message-content {
+  background: #4f46e5;
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.vw-message-agent .vw-message-content {
+  background: #fff;
+  color: #333;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* System messages - visually distinct */
+.vw-message-system {
+  text-align: center;
+  margin: 12px 0;
+}
+
+.vw-message-system .vw-message-content {
+  display: inline-block;
+  background: #e5e7eb;
+  color: #6b7280;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-style: italic;
+  max-width: 90%;
+  border: none;
+  box-shadow: none;
+}
+
+/* Message Input */
+.vw-input-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: #fff;
+  border-top: 1px solid #e5e5e5;
+}
+
+.vw-message-input {
+  flex: 1;
+  border: 1px solid #e5e5e5;
+  border-radius: 20px;
+  padding: 10px 16px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.vw-message-input:focus {
+  border-color: #4f46e5;
+}
+
+.vw-message-input:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.vw-send-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: #4f46e5;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  flex-shrink: 0;
+}
+
+.vw-send-btn:hover:not(:disabled) {
+  background: #4338ca;
+  transform: scale(1.05);
+}
+
+.vw-send-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.vw-send-btn:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+  transform: none;
+}
