@@ -2,9 +2,9 @@
 
 <div dir="rtl">
 
-## 📦 ويدجت الدردشة التفاعلي لـ Valahala
+## 📦Valahala Interactive Chat Widget
 
-ويدجت JavaScript حديث ومتطور لدمج نظام الدردشة المباشر في أي موقع ويب. مبني باستخدام TypeScript و Clean Architecture principles.
+A modern and advanced JavaScript widget for integrating a live chat system into any website. Built using TypeScript and Clean Architecture principles..
 
 </div>
 
