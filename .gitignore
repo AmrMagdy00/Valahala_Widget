@@ -1,0 +1,72 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build outputs
+dist/
+build/
+*.js.map
+*.css.map
+
+# Environment variables (حساس - لا ترفع)
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.*.local
+*.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+Thumbs.db
+.DS_Store
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Test files with sensitive data (if contains real keys)
+# test.html - contains test public key, review before committing
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+.temp/
+
+# Coverage reports
+coverage/
+*.lcov
+.nyc_output/
+
+# TypeScript
+*.tsbuildinfo
+
+# AI/Assistant rules (IDE-specific)
+.clinerules/byterover-rules.md
+.kilocode/rules/byterover-rules.md
+.roo/rules/byterover-rules.md
+.windsurf/rules/byterover-rules.md
+.cursor/rules/byterover-rules.mdc
+.kiro/steering/byterover-rules.md
+.qoder/rules/byterover-rules.md
+.augment/rules/byterover-rules.md
