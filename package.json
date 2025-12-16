@@ -1,0 +1,40 @@
+{
+  "name": "valahala_widget",
+  "version": "1.0.0",
+  "description": "Modern chat widget for Valahala - Real-time customer support widget built with TypeScript and Clean Architecture",
+  "main": "dist/valaha-widget.iife.js",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chat",
+    "widget",
+    "customer-support",
+    "real-time",
+    "websocket",
+    "typescript",
+    "valahala"
+  ],
+  "author": "AmrMagdy00",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AmrMagdy00/Valahala_Widget.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AmrMagdy00/Valahala_Widget/issues"
+  },
+  "homepage": "https://github.com/AmrMagdy00/Valahala_Widget#readme",
+  "devDependencies": {
+    "@types/node": "^25.0.2",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.7",
+    "vite-plugin-css-injected-by-js": "^3.5.2"
+  },
+  "dependencies": {
+    "socket.io-client": "^4.8.1"
+  }
+}
