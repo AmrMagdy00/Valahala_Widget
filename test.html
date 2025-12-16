@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .test-button {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 10px 5px;
+      }
+      .test-button:hover {
+        background-color: #45a049;
+      }
+      .test-container {
+        margin: 20px 0;
+        padding: 15px;
+        background-color: #f5f5f5;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="test-container">
+      <h3>Test Widget Identify</h3>
+      <button class="test-button" onclick="testIdentify()">
+        Test Identify User
+      </button>
+    </div>
+
+    <script
+      src="./dist/valaha-widget.iife.js"
+      data-public-key="VALAHA-KEY-123456"
+    ></script>
+
+    <script>
+      function testIdentify() {
+        const user = {
+          businessCustomerId: "user-789",
+          name: "Ahmed",
+          email: "ahmed@email.com",
+          phone: "01012345678",
+        };
+
+        window.dispatchEvent(
+          new CustomEvent("valaha:identify", {
+            detail: {
+              businessCustomerId: user.businessCustomerId,
+              name: user.name,
+              email: user.email,
+              phone: user.phone,
+            },
+          })
+        );
+
+        console.log("[Test] Identify event dispatched:", user);
+        alert("Identify event dispatched! Check console for details.");
+      }
+    </script>
+  </body>
+</html>
+
+<!-- Example: Identify user after login
+<script>
+  const user = {
+    businessCustomerId: "user-789", // Optional: your internal user ID
+    name: "Ahmed",
+    email: "ahmed@email.com",
+    phone: "01012345678"
+  };
+
+  window.dispatchEvent(
+    new CustomEvent("valaha:identify", {
+      detail: {
+        businessCustomerId: user.businessCustomerId,
+        name: user.name,
+        email: user.email,
+        phone: user.phone,
+      },
+    })
+  );
+</script>
+-->
