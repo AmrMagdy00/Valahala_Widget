@@ -2,7 +2,7 @@ services:
   - type: static
     name: valahala-widget
     buildCommand: npm install && npm run build
-    publishPath: dist
+    staticPublishPath: dist
     headers:
       - path: /*
         name: Cache-Control
