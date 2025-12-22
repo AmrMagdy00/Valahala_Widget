@@ -7,6 +7,8 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",
+    "prebuild": "echo 'Building widget...'",
+    "postbuild": "echo 'Build complete! Output: dist/valaha-widget.iife.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

@@ -1,0 +1,21 @@
+services:
+  - type: static
+    name: valahala-widget
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /*.js
+        name: Content-Type
+        value: application/javascript; charset=utf-8
+      - path: /*
+        name: Access-Control-Allow-Origin
+        value: "*"
+    envVars:
+      - key: NODE_VERSION
+        value: 18.x
+      - key: VITE_BASE_URL
+        value: https://api.valahala.com  # Change this to your production API URL
+
