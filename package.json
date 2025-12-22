@@ -1,6 +1,7 @@
 {
   "name": "valahala_widget",
   "version": "1.0.0",
+  "type": "module",
   "description": "Modern chat widget for Valahala - Real-time customer support widget built with TypeScript and Clean Architecture",
   "types": "src/index.ts",
   "scripts": {

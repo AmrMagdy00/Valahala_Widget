@@ -141,9 +141,17 @@ Open `test.html` in your browser and verify:
 **Solution**:
 
 - **Remove `main` field from `package.json`** - This field can confuse Render into thinking it's a Node.js app
-- **Verify `render.yaml` uses `publishPath: dist`** (not `staticPublishPath`)
+- **Verify `render.yaml` uses `staticPublishPath: dist`**
 - **Ensure service type is `static`** in render.yaml
 - **In Render Dashboard**: Make sure you selected "Static Site" (not "Web Service") when creating the service
+
+### Issue: "ERR_REQUIRE_ESM" or ES Module errors
+
+**Solution**:
+
+- **Add `"type": "module"` to `package.json`** - Vite 7 requires ES modules
+- **Ensure Build Command uses `npm`** (not yarn): `npm install && npm run build`
+- **Verify Node.js version is 18.x or higher** in Environment Variables
 
 ### Issue: Widget Not Connecting to API
 
