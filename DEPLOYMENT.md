@@ -58,6 +58,8 @@ npm install && npm run build
 dist
 ```
 
+**Note**: In `render.yaml`, use `publishPath: dist` (not `staticPublishPath`)
+
 ### Environment Variables
 
 | Variable        | Value                      | Required |
@@ -89,6 +91,8 @@ https://valahala-widget.onrender.com
   data-public-key="YOUR_PUBLIC_KEY"
 ></script>
 ```
+
+**📖 For detailed usage instructions, see [USAGE.md](./USAGE.md)**
 
 ## 🔄 Updating the Widget
 
@@ -131,6 +135,15 @@ Open `test.html` in your browser and verify:
 - Ensure `node_modules/` exists
 - Verify all dependencies are installed
 - Check that `NODE_VERSION` is correct
+
+### Issue: "Cannot find module" or Render trying to run as Node.js app
+
+**Solution**:
+
+- **Remove `main` field from `package.json`** - This field can confuse Render into thinking it's a Node.js app
+- **Verify `render.yaml` uses `publishPath: dist`** (not `staticPublishPath`)
+- **Ensure service type is `static`** in render.yaml
+- **In Render Dashboard**: Make sure you selected "Static Site" (not "Web Service") when creating the service
 
 ### Issue: Widget Not Connecting to API
 

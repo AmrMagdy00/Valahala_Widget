@@ -2,7 +2,6 @@
   "name": "valahala_widget",
   "version": "1.0.0",
   "description": "Modern chat widget for Valahala - Real-time customer support widget built with TypeScript and Clean Architecture",
-  "main": "dist/valaha-widget.iife.js",
   "types": "src/index.ts",
   "scripts": {
     "build": "vite build",
