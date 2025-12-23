@@ -30,11 +30,16 @@
   <body>
     <div class="test-container">
       <h3>Test Widget Identify</h3>
+      <p style="color: #666; font-size: 14px; margin-bottom: 10px">
+        Make sure to build the widget first: <code>npm run build</code>
+      </p>
       <button class="test-button" onclick="testIdentify()">
         Test Identify User
       </button>
     </div>
 
+    <!-- Load widget from local dist folder -->
+    <!-- After running: npm run build -->
     <script
       src="./dist/valaha-widget.iife.js"
       data-public-key="VALAHA-KEY-123456"
