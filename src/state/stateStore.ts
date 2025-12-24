@@ -38,13 +38,11 @@ export function setBaseURL(baseURL: string): void {
 
 export function getBaseURL(): string {
   if (state.baseURL) return state.baseURL;
-  try {
-    if (typeof import.meta !== "undefined" && import.meta.env?.BASE_URL) {
-      return import.meta.env.BASE_URL;
-    }
-  } catch {
-    // import.meta not available
+
+  if (typeof import.meta !== "undefined" && import.meta.env?.BASE_URL) {
+    return import.meta.env.BASE_URL;
   }
+
   return "http://localhost:5000";
 }
 

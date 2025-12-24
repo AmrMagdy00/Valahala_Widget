@@ -1,8 +1,6 @@
 /**
  * UI event handlers - user interactions
  */
-import { getWidgetRoot } from "./renderer";
-import { ChatWindow } from "./components/ChatWindow";
 
 export function attachToggleHandler(root: HTMLElement): void {
   const chatBtn = root.querySelector(".vw-chat-btn") as HTMLElement;
