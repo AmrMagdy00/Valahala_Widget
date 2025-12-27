@@ -18,7 +18,7 @@ This guide explains how to deploy the widget to Render as a Static Site.
 Before deployment, make sure to set:
 
 ```env
-VITE_BASE_URL=https://api.valahala.com
+VITE_BASE_URL=https://api.Connector.com
 ```
 
 **Important Note**: The `VITE_BASE_URL` value is embedded in the bundle at build time, so it must be set before running `npm run build`.
@@ -42,7 +42,7 @@ VITE_BASE_URL=https://api.valahala.com
    - **Publish Directory**: `dist`
    - **Environment Variables**:
      - `NODE_VERSION`: `18.x`
-     - `VITE_BASE_URL`: `https://api.valahala.com` (Replace with your API URL)
+     - `VITE_BASE_URL`: `https://api.Connector.com` (Replace with your API URL)
 
 ## ⚙️ Render Settings
 
@@ -62,10 +62,10 @@ dist
 
 ### Environment Variables
 
-| Variable        | Value                      | Required |
-| --------------- | -------------------------- | -------- |
-| `NODE_VERSION`  | `18.x`                     | ✅ Yes   |
-| `VITE_BASE_URL` | `https://api.valahala.com` | ✅ Yes   |
+| Variable        | Value                       | Required |
+| --------------- | --------------------------- | -------- |
+| `NODE_VERSION`  | `18.x`                      | ✅ Yes   |
+| `VITE_BASE_URL` | `https://api.Connector.com` | ✅ Yes   |
 
 **⚠️ Warning**: Make sure to update `VITE_BASE_URL` to your production API URL.
 
@@ -80,14 +80,14 @@ After building, the following will be deployed:
 After deploying to Render, you'll get a URL like:
 
 ```
-https://valahala-widget.onrender.com
+https://Connector-widget.onrender.com
 ```
 
 ### Using the widget in your site:
 
 ```html
 <script
-  src="https://valahala-widget.onrender.com/valaha-widget.iife.js"
+  src="https://Connector-widget.onrender.com/valaha-widget.iife.js"
   data-public-key="YOUR_PUBLIC_KEY"
 ></script>
 ```
@@ -106,10 +106,10 @@ https://valahala-widget.onrender.com
 
 ```bash
 # Make sure VITE_BASE_URL is set
-export VITE_BASE_URL=https://api.valahala.com
+export VITE_BASE_URL=https://api.Connector.com
 
 # Or create a .env file
-echo "VITE_BASE_URL=https://api.valahala.com" > .env
+echo "VITE_BASE_URL=https://api.Connector.com" > .env
 
 # Build the project
 npm run build

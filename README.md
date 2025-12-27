@@ -1,8 +1,8 @@
-# Valahala Widget
+# Connector Widget
 
 <div dir="rtl">
 
-## 📦Valahala Interactive Chat Widget
+## Connector Interactive Chat Widget
 
 A modern and advanced JavaScript widget for integrating a live chat system into any website. Built using TypeScript and Clean Architecture principles..
 
@@ -34,13 +34,13 @@ A modern and advanced JavaScript widget for integrating a live chat system into 
 ### Using npm
 
 ```bash
-npm install valahala_widget
+npm install connector_widget
 ```
 
 ### Using CDN (Recommended)
 
 ```html
-<script 
+<script
   src="https://cdn.example.com/valaha-widget.iife.js"
   data-public-key="YOUR_PUBLIC_KEY"
 ></script>
@@ -50,8 +50,8 @@ npm install valahala_widget
 
 ```bash
 # Clone the repository
-git clone https://github.com/AmrMagdy00/Valahala_Widget.git
-cd Valahala_Widget
+git clone https://github.com/AmrMagdy00/Connector_Widget.git
+cd Connector_Widget
 
 # Install dependencies
 npm install
@@ -71,18 +71,18 @@ npm run build
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-  <title>My Website</title>
-</head>
-<body>
-  <!-- Your website content -->
-  
-  <!-- Widget Script -->
-  <script 
-    src="./dist/valaha-widget.iife.js"
-    data-public-key="YOUR_PUBLIC_KEY"
-  ></script>
-</body>
+  <head>
+    <title>My Website</title>
+  </head>
+  <body>
+    <!-- Your website content -->
+
+    <!-- Widget Script -->
+    <script
+      src="./dist/valaha-widget.iife.js"
+      data-public-key="YOUR_PUBLIC_KEY"
+    ></script>
+  </body>
 </html>
 ```
 
@@ -96,10 +96,10 @@ If you want to identify logged-in users:
 <script>
   // After user login
   const user = {
-    businessCustomerId: "user-123",  // Your internal user ID
+    businessCustomerId: "user-123", // Your internal user ID
     name: "Ahmed Mohamed",
     email: "ahmed@example.com",
-    phone: "+201234567890"
+    phone: "+201234567890",
   };
 
   // Dispatch identify event
@@ -130,10 +130,10 @@ For production builds, the base URL is embedded at build time.
 
 ### Script Attributes
 
-| Attribute | Required | Description |
-|-----------|----------|-------------|
-| `data-public-key` | ✅ Yes | Your Valahala public API key |
-| `src` | ✅ Yes | Path to the widget script |
+| Attribute         | Required | Description                  |
+| ----------------- | -------- | ---------------------------- |
+| `data-public-key` | ✅ Yes   | Your Valahala public API key |
+| `src`             | ✅ Yes   | Path to the widget script    |
 
 ## 📚 API Reference
 
@@ -147,11 +147,11 @@ Identify a user with their information. This should be dispatched after user log
 window.dispatchEvent(
   new CustomEvent("valaha:identify", {
     detail: {
-      businessCustomerId: string,  // Optional: Your internal user ID
-      name: string,                 // Optional: User's name
-      email: string,                // Optional: User's email
-      phone: string                 // Optional: User's phone
-    }
+      businessCustomerId: string, // Optional: Your internal user ID
+      name: string, // Optional: User's name
+      email: string, // Optional: User's email
+      phone: string, // Optional: User's phone
+    },
   })
 );
 ```
@@ -159,6 +159,7 @@ window.dispatchEvent(
 ### Widget Lifecycle
 
 The widget automatically:
+
 1. Initializes on page load
 2. Creates or retrieves an `externalId` (stored in localStorage)
 3. Authenticates with the backend
@@ -275,6 +276,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## 📞 Support
 
 For issues and questions:
+
 - Open an issue on [GitHub Issues](https://github.com/AmrMagdy00/Valahala_Widget/issues)
 - Check the [Architecture Documentation](./ARCHITECTURE.md)
 - Review the [Widget Flow](./WIDGET_FLOW.md)
@@ -292,8 +294,3 @@ For issues and questions:
 ---
 
 Made with ❤️ by the Valahala Team
-
-
-
-
-

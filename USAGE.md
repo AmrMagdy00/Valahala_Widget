@@ -187,7 +187,7 @@ The widget auto-initializes, but if you need to identify users, make sure the wi
 ```html
 <!-- Widget loads first -->
 <script
-  src="https://valahala-widget.onrender.com/valaha-widget.iife.js"
+  src="https://Connector-widget.onrender.com/valaha-widget.iife.js"
   data-public-key="YOUR_KEY"
 ></script>
 
@@ -215,13 +215,13 @@ You can use the same script tag on all pages of your website. The widget will:
 | Attribute         | Required | Description                                |
 | ----------------- | -------- | ------------------------------------------ |
 | `src`             | ✅ Yes   | URL to the widget script (your Render URL) |
-| `data-public-key` | ✅ Yes   | Your Valahala public API key               |
+| `data-public-key` | ✅ Yes   | Your Connector public API key              |
 
 ### Example with All Attributes
 
 ```html
 <script
-  src="https://valahala-widget.onrender.com/valaha-widget.iife.js"
+  src="https://Connector-widget.onrender.com/valaha-widget.iife.js"
   data-public-key="VALAHA-PUBLIC-KEY-12345"
 ></script>
 ```
@@ -286,7 +286,7 @@ If you need help:
 
 1. Check the [Deployment Guide](./DEPLOYMENT.md)
 2. Review [README](./README.md)
-3. Open an issue on [GitHub](https://github.com/AmrMagdy00/Valahala_Widget/issues)
+3. Open an issue on [GitHub](https://github.com/AmrMagdy00/Connector_Widget/issues)
 
 ---
 
