@@ -13,7 +13,7 @@ export function createWidgetHTML(): string {
     <div class="vw-box">
       <div class="vw-header">
         <div class="vw-header-top">
-          <div class="vw-title">Valaha Support</div>
+          <div class="vw-title">Connector Support</div>
           <div class="vw-status" style="display: none;">OPEN</div>
         </div>
         <div class="vw-subtitle">
