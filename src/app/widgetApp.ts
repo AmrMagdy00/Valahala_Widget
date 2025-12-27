@@ -24,11 +24,9 @@ export async function initWidget(config: WidgetConfig): Promise<void> {
   const externalId = getOrCreateExternalId();
   try {
     const authResult = await postWidgetInit({ externalId });
-    console.log("Auth result:", authResult);
     setCustomerId(authResult.customerId);
     setJwtToken(authResult.token);
   } catch (error) {
-    console.error("[ValahaWidget] Widget init failed", error);
     throw error;
   }
 
@@ -48,20 +46,18 @@ function setupIdentifyListener(): void {
     const payload = customEvent.detail;
 
     if (!payload) {
-      console.warn("[ValahaWidget] Invalid identify payload");
       return;
     }
 
     try {
       await identifyCustomer(payload);
-      console.log("[ValahaWidget] Customer identified successfully");
 
       // Update user name display in widget if available
       if (controller && payload.name) {
         controller.updateUserNameDisplay();
       }
     } catch (error) {
-      console.error("[ValahaWidget] Failed to identify customer:", error);
+      // Error handling without logging
     }
   });
 }

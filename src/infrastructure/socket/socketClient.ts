@@ -60,7 +60,6 @@ export function disconnectSocket(): void {
  */
 export function sendMessageViaSocket(payload: MessageSendPayload): void {
   if (!socket || !socket.connected) {
-    console.error("Socket is not connected");
     return;
   }
 
@@ -72,7 +71,6 @@ export function sendMessageViaSocket(payload: MessageSendPayload): void {
  */
 export function joinConversation(conversationId: string): void {
   if (!socket || !socket.connected) {
-    console.error("Socket is not connected");
     return;
   }
 

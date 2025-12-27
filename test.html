@@ -32,7 +32,7 @@
       <h3>Test Widget Identify</h3>
       <p style="color: #666; font-size: 14px; margin-bottom: 10px">
         Widget loaded from production:
-        <code>https://valahala-widget.onrender.com</code>
+        <code>https://connector-widget.onrender.com</code>
       </p>
       <button class="test-button" onclick="testIdentify()">
         Test Identify User
@@ -41,7 +41,7 @@
 
     <!-- Load widget from production -->
     <script
-      src="https://valahala-widget.onrender.com/valaha-widget.iife.js"
+      src="https://connector-widget.onrender.com/connector-widget.iife.js"
       data-public-key="VALAHA-KEY-123456"
     ></script>
 
@@ -65,7 +65,6 @@
           })
         );
 
-        console.log("[Test] Identify event dispatched:", user);
         alert("Identify event dispatched! Check console for details.");
       }
     </script>

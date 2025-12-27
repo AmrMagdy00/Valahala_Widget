@@ -45,7 +45,6 @@ export function attachStartChatHandler(
     try {
       await onStartChat();
     } catch (error) {
-      console.error("Failed to start chat:", error);
       startBtn.disabled = false;
       if (buttonText) buttonText.style.display = "inline";
       if (buttonLoading) buttonLoading.style.display = "none";

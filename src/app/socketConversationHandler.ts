@@ -26,7 +26,6 @@ export class SocketConversationHandler {
 
   connect(conversationId: string): void {
     if (!getJwtToken()) {
-      console.error("JWT token not found");
       return;
     }
 
@@ -58,7 +57,6 @@ export class SocketConversationHandler {
 
     const conversationId = getConversationId();
     if (!conversationId) {
-      console.error("No conversation ID found");
       return;
     }
 

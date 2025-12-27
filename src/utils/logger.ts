@@ -1,8 +1,14 @@
 /**
- * Logger utility
+ * Logger utility - Production ready (no-op in production)
  */
 export const logger = {
-  info: (...args: unknown[]) => console.log(...args),
-  error: (...args: unknown[]) => console.error(...args),
-  warn: (...args: unknown[]) => console.warn(...args),
+  info: (...args: unknown[]) => {
+    // Production: no logging
+  },
+  error: (...args: unknown[]) => {
+    // Production: no logging
+  },
+  warn: (...args: unknown[]) => {
+    // Production: no logging
+  },
 };

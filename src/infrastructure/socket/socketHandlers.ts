@@ -25,12 +25,10 @@ export function registerSocketHandlers(
   callbacks: SocketEventCallbacks
 ): void {
   socket.on("connect", () => {
-    console.log("✅ Socket connected", socket.id);
     setSocketConnected(true);
   });
 
   socket.on("disconnect", () => {
-    console.log("❌ Socket disconnected");
     setSocketConnected(false);
   });
 
@@ -55,7 +53,6 @@ function handleConversationAssigned(
   payload: ConversationAssignedPayload,
   callbacks: SocketEventCallbacks
 ): void {
-  console.log("👤 Conversation assigned", payload);
   setAgentAssigned(payload.agentAssigned);
 
   const systemMessage =
@@ -72,7 +69,6 @@ function handleMessageNew(
   payload: MessageNewPayload,
   callbacks: SocketEventCallbacks
 ): void {
-  console.log("📩 New message", payload);
   const message = mapMessageFromDto(payload);
   addMessage(message);
 
@@ -85,7 +81,6 @@ function handleConversationClosed(
   payload: ConversationClosedPayload,
   callbacks: SocketEventCallbacks
 ): void {
-  console.log("🔒 Conversation closed", payload);
   setConversationClosed(true);
 
   if (callbacks.onSystemMessage) {
@@ -101,7 +96,6 @@ function handleError(
   payload: ErrorPayload,
   callbacks: SocketEventCallbacks
 ): void {
-  console.error("❌ Socket error", payload);
   const errorMessage = payload.message || "An error occurred";
   if (callbacks.onSystemMessage) {
     callbacks.onSystemMessage(errorMessage);

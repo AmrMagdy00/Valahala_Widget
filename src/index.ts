@@ -27,7 +27,6 @@ function resolveConfig(): WidgetConfig | null {
   const publicKey = script?.getAttribute("data-public-key");
 
   if (!publicKey) {
-    console.error("[ValahaWidget] Missing required attribute: data-public-key");
     return null;
   }
 
@@ -42,7 +41,6 @@ function createBootstrap() {
 
   return function bootstrap() {
     if (initialized) {
-      console.warn("[ValahaWidget] Widget already initialized");
       return;
     }
 
@@ -53,7 +51,7 @@ function createBootstrap() {
       initWidget(config);
       initialized = true;
     } catch (error) {
-      console.error("[ValahaWidget] Initialization failed", error);
+      // Error handling without logging
     }
   };
 }

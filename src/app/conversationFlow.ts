@@ -65,7 +65,7 @@ export async function loadConversation(conversationId: string): Promise<void> {
     const domainMessages = messages.map(mapMessageFromDto);
     setMessages(domainMessages);
   } catch (error) {
-    console.error("[ValahaWidget] Failed to load conversation history:", error);
+    // Error handling without logging
   }
 }
 
