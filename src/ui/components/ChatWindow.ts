@@ -12,15 +12,19 @@ export function createWidgetHTML(): string {
 
     <div class="vw-box">
       <div class="vw-header">
-        <div class="vw-header-top">
-          <div class="vw-title">Connector Support</div>
-          <div class="vw-status" style="display: none;">OPEN</div>
-        </div>
-        <div class="vw-subtitle">
-          <span class="vw-user-name" style="display: none;"></span>
-          <span class="vw-subtitle-text">We reply in minutes</span>
-        </div>
-      </div>
+  <div class="vw-header-top">
+    <div class="vw-title">Connector Support</div>
+
+    <button class="vw-close-btn" aria-label="Close chat">
+      ✕
+    </button>
+  </div>
+
+  <div class="vw-subtitle">
+    <span class="vw-user-name" style="display: none;"></span>
+    <span class="vw-subtitle-text">We reply in minutes</span>
+  </div>
+</div>
 
       <div class="vw-body vw-welcome-screen">
         <p class="vw-welcome">👋 Welcome</p>

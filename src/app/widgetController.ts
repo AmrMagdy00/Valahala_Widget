@@ -14,6 +14,7 @@ import {
   attachStartChatHandler,
   attachSendMessageHandler,
   attachInputChangeHandler,
+  attachCloseHandler,
 } from "../ui/uiEvents";
 import {
   startConversationUseCase,
@@ -128,6 +129,7 @@ export class WidgetController {
     if (!this.root) return;
 
     attachToggleHandler(this.root);
+    attachCloseHandler(this.root);
     attachStartChatHandler(this.root, () => this.startConversation());
     attachSendMessageHandler(this.root, (content) => this.sendMessage(content));
     attachInputChangeHandler(this.root, () => this.refreshSendButton());
