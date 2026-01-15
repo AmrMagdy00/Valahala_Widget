@@ -37,7 +37,8 @@ export function attachToggleHandler(root: HTMLElement): void {
     box.style.display = "flex";
     box.classList.add("show");
 
-    chatBtn.style.display = "none";
+    chatBtn.style.opacity = "0";
+    chatBtn.style.pointerEvents = "none";
 
     if (messageInput) {
       messageInput.focus();
@@ -56,7 +57,8 @@ export function attachCloseHandler(root: HTMLElement): void {
     box.style.display = "none";
     box.classList.remove("show");
 
-    chatBtn.style.display = "flex";
+    chatBtn.style.opacity = "1";
+    chatBtn.style.pointerEvents = "auto";
   };
 }
 
