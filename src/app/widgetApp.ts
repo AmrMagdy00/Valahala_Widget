@@ -7,6 +7,8 @@ import {
   getOrCreateExternalId,
   setCustomerId,
   setJwtToken,
+  getBusinessCustomerId,
+  getUserName,
 } from "../state/stateStore";
 import { postWidgetInit } from "../infrastructure/http/widgetApi";
 import { WidgetController } from "./widgetController";
@@ -32,6 +34,16 @@ export async function initWidget(config: WidgetConfig): Promise<void> {
 
   controller = new WidgetController();
   controller.mountWidget();
+
+  // Restore businessCustomerId and userName from localStorage if available
+  const storedBusinessCustomerId = getBusinessCustomerId();
+  const storedUserName = getUserName();
+  if (storedBusinessCustomerId || storedUserName) {
+    // Update UI if we have stored data
+    if (controller && storedUserName) {
+      controller.updateUserNameDisplay();
+    }
+  }
 
   // Listen for identify events from frontend
   setupIdentifyListener();

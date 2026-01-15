@@ -6,6 +6,8 @@ import {
   getExternalId,
   setBusinessCustomerId,
   setUserName,
+  setCustomerId,
+  setJwtToken,
 } from "../state/stateStore";
 
 export type IdentifyPayload = {
@@ -26,7 +28,7 @@ export async function identifyCustomer(
     throw new Error("[ValahaWidget] External ID not found");
   }
 
-  await postIdentifyCustomer({
+  const response = await postIdentifyCustomer({
     externalId,
     businessCustomerId: payload.businessCustomerId,
     name: payload.name,
@@ -40,5 +42,15 @@ export async function identifyCustomer(
   }
   if (payload.name) {
     setUserName(payload.name);
+  }
+
+  // Update customerId and token if provided (when customerId changes after identify)
+  if (response.data) {
+    if (response.data.customerId) {
+      setCustomerId(response.data.customerId);
+    }
+    if (response.data.token) {
+      setJwtToken(response.data.token);
+    }
   }
 }

@@ -6,6 +6,8 @@ import { Message } from "../domain/message/message.model";
 
 const STORAGE_KEY = "valaha_external_id";
 const TOKEN_STORAGE_KEY = "valaha_jwt_token";
+const BUSINESS_CUSTOMER_ID_STORAGE_KEY = "valaha_business_customer_id";
+const USER_NAME_STORAGE_KEY = "valaha_user_name";
 
 let state: WidgetState = createInitialWidgetState();
 
@@ -105,18 +107,40 @@ export function getCustomerId(): string | null {
 
 export function setBusinessCustomerId(businessCustomerId: string | null): void {
   state.businessCustomerId = businessCustomerId;
+  if (businessCustomerId) {
+    localStorage.setItem(BUSINESS_CUSTOMER_ID_STORAGE_KEY, businessCustomerId);
+  } else {
+    localStorage.removeItem(BUSINESS_CUSTOMER_ID_STORAGE_KEY);
+  }
 }
 
 export function getBusinessCustomerId(): string | null {
-  return state.businessCustomerId;
+  if (state.businessCustomerId) return state.businessCustomerId;
+  const stored = localStorage.getItem(BUSINESS_CUSTOMER_ID_STORAGE_KEY);
+  if (stored) {
+    state.businessCustomerId = stored;
+    return stored;
+  }
+  return null;
 }
 
 export function setUserName(userName: string | null): void {
   state.userName = userName;
+  if (userName) {
+    localStorage.setItem(USER_NAME_STORAGE_KEY, userName);
+  } else {
+    localStorage.removeItem(USER_NAME_STORAGE_KEY);
+  }
 }
 
 export function getUserName(): string | null {
-  return state.userName;
+  if (state.userName) return state.userName;
+  const stored = localStorage.getItem(USER_NAME_STORAGE_KEY);
+  if (stored) {
+    state.userName = stored;
+    return stored;
+  }
+  return null;
 }
 
 // Conversation

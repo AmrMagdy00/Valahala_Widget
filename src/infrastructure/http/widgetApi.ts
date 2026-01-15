@@ -140,6 +140,10 @@ type IdentifyCustomerPayload = {
 type IdentifyCustomerResponse = {
   success: boolean;
   message: string;
+  data?: {
+    customerId: string;
+    token?: string;
+  };
 };
 
 /**
