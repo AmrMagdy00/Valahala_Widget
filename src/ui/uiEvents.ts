@@ -2,6 +2,28 @@
  * UI event handlers - user interactions
  */
 
+// export function attachToggleHandler(root: HTMLElement): void {
+//   const chatBtn = root.querySelector(".vw-chat-btn") as HTMLElement;
+//   const box = root.querySelector(".vw-box") as HTMLElement;
+//   const messageInput = root.querySelector(
+//     ".vw-message-input"
+//   ) as HTMLInputElement;
+
+//   chatBtn.onclick = () => {
+//     const isVisible =
+//       box.style.display === "block" || box.classList.contains("show");
+//     if (isVisible) {
+//       box.style.display = "none";
+//       box.classList.remove("show");
+//     } else {
+//       box.style.display = "flex";
+//       box.classList.add("show");
+//       if (messageInput) {
+//         messageInput.focus();
+//       }
+//     }
+//   };
+// }
 export function attachToggleHandler(root: HTMLElement): void {
   const chatBtn = root.querySelector(".vw-chat-btn") as HTMLElement;
   const box = root.querySelector(".vw-box") as HTMLElement;
@@ -9,18 +31,16 @@ export function attachToggleHandler(root: HTMLElement): void {
     ".vw-message-input"
   ) as HTMLInputElement;
 
+  if (!chatBtn || !box) return;
+
   chatBtn.onclick = () => {
-    const isVisible =
-      box.style.display === "block" || box.classList.contains("show");
-    if (isVisible) {
-      box.style.display = "none";
-      box.classList.remove("show");
-    } else {
-      box.style.display = "flex";
-      box.classList.add("show");
-      if (messageInput) {
-        messageInput.focus();
-      }
+    box.style.display = "flex";
+    box.classList.add("show");
+
+    chatBtn.style.display = "none";
+
+    if (messageInput) {
+      messageInput.focus();
     }
   };
 }
